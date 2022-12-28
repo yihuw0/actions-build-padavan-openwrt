@@ -12,9 +12,9 @@ set -u
 
 # 1.修改一些默认参数 ./user/shared/defaults.h（需要不同设备不同拷贝到相应sh文件就好)
 USER_NAME="admin"                       # 用户名 admin
-USER_PASSWORD=$USER_NAME                # 用户密码 admin
-LAN_IP="192.168.3"                      # lan 地址 192.168.3.1 一定别写后面的 .1
-WIFI_PASSWORD="1234567890"              # wifi密码，切记密码最少8位 admin
+USER_PASSWORD="hxk19840929"                # 用户密码 admin
+LAN_IP="192.168.110"                      # lan 地址 192.168.3.1 一定别写后面的 .1
+WIFI_PASSWORD="zzcskj00"              # wifi密码，切记密码最少8位 admin
 VERSION_TIME=$(date "+%Y%m%d")          # 自动时间更新时版本号: 20200320
 DEFAULT_PATH="./user/shared/defaults.h" # 默认文件配置目录
 
@@ -63,19 +63,19 @@ sed -i "/CONFIG_FIRMWARE_INCLUDE_WYYBIN/d" .config       # 删除配置项 网�
 ######################################################################
 
 # 科学
-echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >>.config # SS plus+
-echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >>.config    # SS server
-echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >>.config      # simple-obfs混淆插件,SS 开了才可以打开
+echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >>.config # SS plus+
+echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=y" >>.config    # SS server
+echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >>.config      # simple-obfs混淆插件,SS 开了才可以打开
 
 #  代理
-echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >>.config    # SOCKS proxy
+echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=y" >>.config    # SOCKS proxy
 echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=n" >>.config   # TUNSAFE
 echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >>.config    # srelay
-echo "CONFIG_FIRMWARE_INCLUDE_IPT2SOCKS=n" >>.config # IPT2
+echo "CONFIG_FIRMWARE_INCLUDE_IPT2SOCKS=y" >>.config # IPT2
 
 # 广告
-echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >>.config      # adbyby plus+
-echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >>.config # adgHome
+echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >>.config      # adbyby plus+
+echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >>.config # adgHome
 echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=n" >>.config   # KP广告过滤
 
 # DNS 有关
@@ -84,16 +84,16 @@ echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >>.config     # smartdns
 echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=y" >>.config  # smartdns二进制文件
 
 #网易云解锁
-echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >>.config
-#网易云解锁GO版本执行文件（4M多）注意固件超大小
-echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >>.config
+echo "CONFIG_FIRMWARE_INCLUDE_WYY=y" >>.config
+#网易云解锁GO版本执行文件（4M多）注意固件超大小p
+echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=y" >>.config
 
 # 其他
 echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >>.config  # MENTOHUST
 echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >>.config # SCUTCLIENT
 echo "CONFIG_FIRMWARE_INCLUDE_FRPC=n" >>.config       # 内网穿透FRPC
 echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >>.config       # 内网穿透FRPS
-echo "CONFIG_FIRMWARE_INCLUDE_CADDY=n" >>.config      # 在线文件管理服务
+echo "CONFIG_FIRMWARE_INCLUDE_CADDY=y" >>.config      # 在线文件管理服务
 echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >>.config  # MENTOHUST 锐捷认证
 echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >>.config # SCUT校园网客户端
 echo "CONFIG_FIRMWARE_INCLUDE_CADDYBIN=n" >>.config   # 集成caddu执行文件，此文件有13M,请注意固件大小。如果不集成，会从网上下载下来执行，不影响正常使用
