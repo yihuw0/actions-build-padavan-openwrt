@@ -16,7 +16,7 @@ on:
   # watch:                              # 监视操作
   #   types: [started]                  # 点击 star 之后
 env:
-  DEVICES: "PSG1218" # 设备名字数组
+  DEVICES: "NEWIFI3" # 设备名字数组
   UPLOAD_FIRMWARE: true # 导出固件
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 jobs:
